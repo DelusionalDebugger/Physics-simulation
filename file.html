@@ -43,11 +43,17 @@
         var timeStep = 1.0 / 60.0;
         var isMouseDown = false;
 
+
         var ball = {
             radius: 0.5,
             pos: { x: 0.2, y: 0.2 },
             vel: { x: 10.0, y: 15.0 },
         }
+
+		var sprite = new Image();
+        sprite.src = 'ball.png';
+
+		
 
         // Mouse functionality added here --------------------------------
 
@@ -84,6 +90,12 @@
                 cX(ball.pos), cY(ball.pos), cScale * ball.radius, 0.0, 2.0 * Math.PI);
             c.closePath();
             c.fill();
+
+			if (sprite.complete) { // Ensure the image is fully loaded before drawing
+                const spriteWidth = cScale * 2 * ball.radius; // Scale the sprite to match the ball size
+                const spriteHeight = spriteWidth * (sprite.height / sprite.width); // Maintain aspect ratio
+                c.drawImage(sprite, cX(ball.pos) - spriteWidth / 2, cY(ball.pos) - spriteHeight / 2, spriteWidth, spriteHeight);
+            }
         }
 
         // simulation ----------------------------------------------------
