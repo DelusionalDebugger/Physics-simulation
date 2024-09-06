@@ -1,6 +1,6 @@
 Angular velocity ig
 Add ability to interact with mouse
-Move simulate function to css with image to make it move
+Add separate file with liquid simulation
 
 Useful resources:
 https://web.archive.org/web/20160526204059/http://simonsarris.com/blog/510-making-html5-canvas-useful
