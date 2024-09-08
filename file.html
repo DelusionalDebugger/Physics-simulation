@@ -66,7 +66,7 @@
             ball.vel.y = 0;
             isMouseDown = true;
 
-            //For programming momentum
+            // For programming momentum -----------------------------------
             justHeld = true;
             ball.savedPos.x = ball.pos.x
             ball.savedPos.y = ball.pos.y
@@ -91,7 +91,15 @@
                 var vector_change_x = ball.pos.x - ball.savedPos.x
                 var vector_change_y = ball.pos.y - ball.savedPos.y
 
-                //Add match case statement here deciding how the vector changes will effect the velocity of the ball
+                if (vector_change_x > 0){
+
+                    ball.vel.x = 10.0
+
+                } else if(vector_change_x < 0){
+
+                    ball.vel.x = -10.0
+
+                }
             }
         }
 
@@ -147,6 +155,7 @@
             simulate();
             draw();
             requestAnimationFrame(update);
+            momentum();
         }
 
         update();
