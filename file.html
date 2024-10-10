@@ -67,16 +67,40 @@
             isMouseDown = true;
 
             // For programming momentum -----------------------------------
-            justHeld = true;
-            ball.savedPos.x = ball.pos.x
-            ball.savedPos.y = ball.pos.y
+           
+            var initialPos = { x: 0, y: 0 }; // To store the initial position when mouse is pressed
         }
 
-        function releaseMouse() {
+        function updatePosition(event) {
+            var rect = canvas.getBoundingClientRect();
+            ball.pos.x = (event.clientX - rect.left) / cScale;
+            ball.pos.y = (canvas.height - (event.clientY - rect.top)) / cScale;
+
+            // Store initial position only when mouse is pressed
+            if (!isMouseDown) {
+                initialPos.x = ball.pos.x;
+                initialPos.y = ball.pos.y;
+            }
+
+            isMouseDown = true;
+        }
+
+        function releaseMouse(event) {
             isMouseDown = false;
-            justHeld = false
+
+            // Capture the final position when the mouse is released
+            var rect = canvas.getBoundingClientRect();
+            var finalPos = {
+                x: (event.clientX - rect.left) / cScale,
+                y: (canvas.height - (event.clientY - rect.top)) / cScale
+            };
+
+            // Calculate velocity based on drag distance
+            ball.vel.x = (finalPos.x - initialPos.x) * 10; // Scale factor for velocity
+            ball.vel.y = (finalPos.y - initialPos.y) * 10;
         }
 
+        // Event listeners
         canvas.addEventListener('mousedown', updatePosition);
         canvas.addEventListener('mousemove', function (event) {
             if (isMouseDown) {
@@ -84,24 +108,6 @@
             }
         });
         canvas.addEventListener('mouseup', releaseMouse);
-
-        function momentum(){
-            if (justHeld == false){
-                justHeld = null;
-                var vector_change_x = ball.pos.x - ball.savedPos.x
-                var vector_change_y = ball.pos.y - ball.savedPos.y
-
-                if (vector_change_x > 0){
-
-                    ball.vel.x = 10.0
-
-                } else if(vector_change_x < 0){
-
-                    ball.vel.x = -10.0
-
-                }
-            }
-        }
 
 
         // drawing -------------------------------------------------------
