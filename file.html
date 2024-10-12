@@ -85,6 +85,7 @@
             isMouseDown = true;
         }
 
+
         function releaseMouse(event) {
             isMouseDown = false;
 
@@ -162,6 +163,11 @@
             draw();
             requestAnimationFrame(update);
             momentum();
+            
+            if (isMouseDown == true) { //So ball stays still when mouse is held
+                ball.vel.x = 0
+                ball.vel.y = 0
+        };
         }
 
         update();
