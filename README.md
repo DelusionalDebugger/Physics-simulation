@@ -1,2 +1,2 @@
 # Physics simulation
- Trying to create a physics simulation with html canvas and javascript code
+ Creating a 2D physics simulation with html canvas and javascript code
