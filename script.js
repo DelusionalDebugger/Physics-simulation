@@ -1,5 +1,3 @@
-
-
         function cX(pos) {
             return pos.x * cScale;
         }
@@ -53,7 +51,7 @@
                 initialPos.y = ball.pos.y;
             }
 
-            isMouseDown = true;
+            else; {isMouseDown = true;}
         }
 
 
