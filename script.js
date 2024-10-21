@@ -34,11 +34,10 @@
             ball.vel.x = 0;
             ball.vel.y = 0;
             isMouseDown = true;
+        }
 
             // For programming momentum -----------------------------------
            
-            var initialPos = { x: 0, y: 0 }; // To store the initial position when mouse is pressed
-        }
 
         function updatePosition(event) {
             var rect = canvas.getBoundingClientRect();
@@ -75,6 +74,8 @@
         canvas.addEventListener('mousemove', function (event) {
             if (isMouseDown) {
                 updatePosition(event);
+                ball.vel.x = 0
+                ball.vel.y = 0
             }
         });
         canvas.addEventListener('mouseup', releaseMouse);
