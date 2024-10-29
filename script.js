@@ -51,7 +51,7 @@
             }
 
             else; {isMouseDown = true;}
-        }
+        };
 
 
         function releaseMouse(event) {
@@ -74,8 +74,6 @@
         canvas.addEventListener('mousemove', function (event) {
             if (isMouseDown) {
                 updatePosition(event);
-                ball.vel.x = 0
-                ball.vel.y = 0
             }
         });
         canvas.addEventListener('mouseup', releaseMouse);
@@ -123,6 +121,9 @@
                     ball.vel.y = -ball.vel.y;
                     gravity.y = gravity.y - 2;
                 }
+            } else; {
+                ball.vel.x = 0
+                ball.vel.y = 0
             }
         }
 
@@ -133,11 +134,6 @@
             draw();
             requestAnimationFrame(update);
             momentum();
-            
-            if (isMouseDown == true) { //So ball stays still when mouse is held
-                ball.vel.x = 0
-                ball.vel.y = 0
-        };
         }
 
         update();
