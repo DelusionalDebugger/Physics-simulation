@@ -43,8 +43,8 @@ function releaseMouse(event) {
         y: (canvas.height - (event.clientY - rect.top)) / cScale
     };
 
-    ball.vel.x = (finalPos.x - initialPos.x) * 10; // Scale factor for velocity
-    ball.vel.y = (finalPos.y - initialPos.y) * 10;
+    ball.vel.x = (finalPos.x - initialPos.x) * 5; // Scale factor for velocity
+    ball.vel.y = (finalPos.y - initialPos.y) * 5;
 }
 
 // Event listeners
