@@ -1,10 +1,2 @@
-Angular velocity ig
-Add ability to interact with mouse
-Add separate file with liquid simulation
-
-Useful resources:
-https://web.archive.org/web/20160526204059/http://simonsarris.com/blog/510-making-html5-canvas-useful
-
-https://stackoverflow.com/questions/36011249/detect-hold-mouse-click-in-javascript#:~:text=If%20the%20mouse%20is%20still,%7D%2C%202000)%3B%20%7D)%3B%20window.
-
-https://www.geeksforgeeks.org/create-an-object-that-follows-the-mouse-pointer-using-p5-js/
+Add angular velocity
+Add button to get another ball and collision
