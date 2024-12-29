@@ -15,21 +15,24 @@
 
     <canvas id="myCanvas" style="border:2px solid"></canvas>
 
+    <button>Spawn ball</button>
+
     <script>
 
-    // canvas setup -------------------------------------------------------
+        // canvas setup -------------------------------------------------------
 
-    var canvas = document.getElementById("myCanvas");
-    var c = canvas.getContext("2d");
+        var canvas = document.getElementById("myCanvas");
+        var c = canvas.getContext("2d");
 
-    canvas.width = window.innerWidth - 20;
-    canvas.height = window.innerHeight - 90;
+        canvas.width = window.innerWidth - 20;
+        canvas.height = window.innerHeight - 90;
 
-    var simMinWidth = 20.0;
-    var cScale = Math.min(canvas.width, canvas.height) / simMinWidth;
-    var simWidth = canvas.width / cScale;
-    var simHeight = canvas.height / cScale;
-</script>
+        var simMinWidth = 20.0;
+        var cScale = Math.min(canvas.width, canvas.height) / simMinWidth;
+        var simWidth = canvas.width / cScale;
+        var simHeight = canvas.height / cScale;
+    
+    </script>
 
     <script src="script.js"></script>
 
