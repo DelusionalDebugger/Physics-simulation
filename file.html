@@ -15,8 +15,6 @@
 
     <canvas id="myCanvas" style="border:2px solid"></canvas>
 
-    <button id="instantiate" onclick="script.js">Spawn ball</button>
-
     <script>
 
         // canvas setup -------------------------------------------------------
@@ -31,17 +29,30 @@
         var cScale = Math.min(canvas.width, canvas.height) / simMinWidth;
         var simWidth = canvas.width / cScale;
         var simHeight = canvas.height / cScale;
-
-        document.getElementById("instantiate").addEventListener("click", function() {
-            const newBall = load('script.js'); //Constant where new ball object is stored
-            newBall.run();
-
-            newBall.pos = (0.2, 0.2)
-        });
     
     </script>
 
-    <script src="script.js"></script>
+    <script id="ball" src="script.js"></script>
+    
+    <button type="button" onclick="clickToInstantiate()">
+        Spawn ball
+        <div id="instantiate"></div> <!-- Adds id to button -->
+    </button>
+
+    <script type="text/javascript">
+        var ball = document.getElementById("ball");
+
+        function clickToInstantiate(){
+            ball.onclick() = function(){
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = "script.js";
+                document.getElementsByTagName("head")[0].appendChild(script);
+                return false;
+            }; 
+            document.getElementById('ball').click();
+        };
+    </script>
 
 </body>
 
