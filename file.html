@@ -39,7 +39,7 @@
         <div id="instantiate"></div> <!-- Adds id to button -->
     </button>
 
-<!--        <script type="text/javascript">
+      <!-- <script type="text/javascript">
         var ball = document.getElementById("ball");
 
         function clickToInstantiate(){
@@ -48,9 +48,9 @@
                 script.type = "text/javascript";
                 script.src = "script.js";
                 document.getElementsByTagName("head")[0].appendChild(script);
-                return false;
+                return;
             }; 
-            document.getElementById('ball').click();
+            document.getElementById('ball').canvas.addEventListener('ball', onclick);
         };
     </script> -->
 
